@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, Navlink } from "react-router-dom";
 import logo from "../logo.svg";
 
 const Navbar = () => {
@@ -9,10 +9,15 @@ const Navbar = () => {
         <img className="logo" src={logo} alt="the cocktail db" />
         <ul className="nav-links">
           <li>
-            <a href="#">home</a>
+            <NavLink to={"/"}>
+              <a href="#">home</a>
+            </NavLink>
           </li>
           <li>
-            <a href="#">about</a>
+            <NavLink to={"/about"}>
+              {" "}
+              <a href="#">about</a>
+            </NavLink>
           </li>
         </ul>
       </nav>
