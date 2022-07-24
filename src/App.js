@@ -7,18 +7,28 @@ import SingleCocktail from "./pages/SingleCocktail";
 import Error from "./pages/Error";
 // import components
 import Navbar from "./components/Navbar";
+import CocktailList from "./components/CocktailList";
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="about" element={<About />} />
-        <Route path="single-cocktail" element={<SingleCocktail />} />
+        <Route path="cocktail/:id" element={<SingleCocktail />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </Router>
   );
 }
+
+//steps:
+//cocktail
+//cocktail list
+//loader
+//single cocktail page
+//filter function
+//active
 
 export default App;

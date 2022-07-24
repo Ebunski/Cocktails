@@ -1,12 +1,27 @@
-import React from 'react'
-import { useGlobalContext } from '../context'
+import React, { useState } from "react";
+import { useGlobalContext } from "../context";
 
 const SearchForm = () => {
-  return (
-    <div>
-      <h2>search form component</h2>
-    </div>
-  )
-}
+  const [searchItem, setSearchItem] = useState("");
 
-export default SearchForm
+  function handleChange(e) {
+    setSearchItem(e.target.value);
+  }
+  return (
+    <section className="search">
+      <div className="search-form">
+        <form className="form-control">
+          <label htmlFor="searchForm">search your favourite cocktail</label>
+          <input
+            id="searchForm"
+            type={"text"}
+            onChange={handleChange}
+            value={searchItem}
+          />
+        </form>
+      </div>
+    </section>
+  );
+};
+
+export default SearchForm;
