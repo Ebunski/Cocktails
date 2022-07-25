@@ -1,6 +1,6 @@
-# Frontend Mentor - Interactive comments section solution
+# 15. Cocktails
 
-This is a solution to the [Interactive comments section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+Project from freecodecamp
 
 ## Table of contents
 
@@ -25,8 +25,9 @@ Users should be able to:
 
 - View the optimal layout for the app depending on their device's screen size
 - See hover states for all interactive elements on the page
-- Create, Read, Update, and Delete comments and replies
-- Upvote and downvote comments
+- Navigate between routes
+- Search for cocktail
+- Click on cocktail for more details
 
 ### Screenshot
 
@@ -35,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Interactive comments Section] https://github.com/Ebunski/Interactive-comments-section
-- Live Site URL: https://fm-interactive-comments-section.netlify.app/
+- Solution URL: https://github.com/Ebunski/Cocktails
+- Live Site URL: https://ebunski-cocktails.netlify.app/
 
 ## My process:
 
@@ -57,7 +58,6 @@ Steps:
 - Semantic HTML5 markup
 - Flexbox
 - CSS Grid
-- SCSS
 - [React](https://reactjs.org/) - JS library
 
 ### What I learned
@@ -95,4 +95,4 @@ I then mapped over the array and avoided repetition.
 
 ## Acknowledgments
 
-Thank you frontend mentor.
+Thank you freecodecamp
