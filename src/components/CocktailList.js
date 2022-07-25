@@ -8,22 +8,22 @@ const CocktailList = () => {
 
   if (isLoading) return <Loading />;
 
-  console.log(data);
-
-  const cocktailItems = data.map((x) => <Cocktail key={x.idDrink} {...x} />);
-  return (
-    <section className="section">
-      {data.length === 0 ? (
+  if (data === null || data.length === 0) {
+    return (
+      <section className="section">
         <h4 className="section-title">
           No cocktails matched your search criteria
         </h4>
-      ) : (
-        <>
-          {" "}
-          <h2 className="section-title">Cocktails</h2>
-          <div className="cocktails-center">{cocktailItems}</div>
-        </>
-      )}
+      </section>
+    );
+  }
+
+  const cocktailItems = data.map((x) => <Cocktail key={x.idDrink} {...x} />);
+
+  return (
+    <section className="section">
+      <h2 className="section-title">Cocktails</h2>
+      <div className="cocktails-center">{cocktailItems}</div>
     </section>
   );
 };

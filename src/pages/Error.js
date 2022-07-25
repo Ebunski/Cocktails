@@ -5,7 +5,11 @@ const Error = () => {
   return (
     <section className="section error-page">
       <div className="error-container">
-        <h2>Oops! can't find the page you are looking for</h2>
+        <h2>Oops! it's a dead end</h2>
+        <Link to="/">
+          {" "}
+          <button className="btn btn-primary">Back home</button>
+        </Link>
       </div>
     </section>
   );

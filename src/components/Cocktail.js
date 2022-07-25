@@ -2,19 +2,25 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Cocktail = (props) => {
-  const { idDrink, strDrink, strDrinkThumb, strGlass, strAlcoholic } = props;
+  const {
+    idDrink: id,
+    strDrink: name,
+    strDrinkThumb: image,
+    strGlass: glass,
+    strAlcoholic: type,
+  } = props;
   const navigate = useNavigate();
   return (
     <article className="cocktail">
-      <img src={strDrinkThumb} alt={strDrink} />
+      <img src={image} alt={name} />
       <div className="cocktail-footer">
-        <h3>{strDrink}</h3>
-        <h4>{strGlass}</h4>
-        <p>{strAlcoholic}</p>
+        <h3>{name}</h3>
+        <h4>{glass}</h4>
+        <p>{type}</p>
 
         <button
           className="btn-details btn-primary"
-          onClick={() => navigate(`/cocktail/${idDrink}`, { state: props })}
+          onClick={() => navigate(`/cocktail/${id}`, { state: props })}
         >
           Details
         </button>

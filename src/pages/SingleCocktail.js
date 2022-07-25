@@ -1,7 +1,8 @@
 import React from "react";
-import Loading from "../components/Loading";
-import { useParams, Link, useLocation } from "react-router-dom";
-const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
+// import Loading from "../components/Loading";
+//import {useParams} from "react-router-dom"
+import { Link, useLocation } from "react-router-dom";
+// const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
 const SingleCocktail = () => {
   const location = useLocation();
@@ -10,8 +11,7 @@ const SingleCocktail = () => {
   const pairs = Object.entries(location.state);
   const instructions = pairs
     .filter((x) => x[0].includes("strIngredient") && x[1] !== null)
-    .map((x) => x[1])
-    .map((x) => <span>{x}</span>);
+    .map((x) => <span>{x[1]}</span>);
 
   console.log(instructions);
 

@@ -6,39 +6,33 @@ const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [rawData, setRawData] = useState([]);
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [isLoading, setIsloading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  async function getData() {
-    try {
-      const items = await axios.get(`${url}`);
-      setRawData(items.data.drinks);
-      setData(items.data.drinks);
-      setIsloading(false);
-      console.time();
-      console.timeEnd();
-    } catch (err) {
-      console.error(err);
-      setIsloading(false);
-    }
-  }
+  const getData = useCallback(
+    async function getData() {
+      setIsLoading(true);
+      try {
+        const items = await axios.get(
+          `${url}${searchTerm.toLowerCase() || "a"}`
+        );
+        setData(items.data.drinks);
+        setIsLoading(false);
+        console.time();
+        console.timeEnd();
+      } catch (err) {
+        console.error(err);
+        setIsLoading(false);
+      }
+    },
+    [searchTerm]
+  );
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [searchTerm, getData]);
 
-  useEffect(() => {
-    searchHandler();
-  }, [searchTerm]);
-
-  function searchHandler() {
-    const newData = rawData.filter((x) =>
-      x.strDrink.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setData(newData);
-  }
   return (
     <AppContext.Provider
       value={{
@@ -49,7 +43,6 @@ const AppProvider = ({ children }) => {
 
         //functions
         setSearchTerm,
-        searchHandler,
       }}
     >
       {children}
