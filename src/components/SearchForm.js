@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useGlobalContext } from "../context";
 
 const SearchForm = () => {
-  const [searchItem, setSearchItem] = useState("");
+  const { searchTerm, setSearchTerm } = useGlobalContext();
 
-  function handleChange(e) {
-    setSearchItem(e.target.value);
-  }
   return (
     <section className="search">
       <div className="search-form">
@@ -15,8 +12,8 @@ const SearchForm = () => {
           <input
             id="searchForm"
             type={"text"}
-            onChange={handleChange}
-            value={searchItem}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            value={searchTerm}
           />
         </form>
       </div>

@@ -7,19 +7,26 @@ const Navbar = () => {
     <header className="navbar">
       <nav className="nav-center">
         <img className="logo" src={logo} alt="the cocktail db" />
-        <ul className="nav-links">
-          <li>
-            <NavLink to={"/"}>
-              <a href="/#">home</a>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to={"/about"}>
-              {" "}
-              <a href="/#">about</a>
-            </NavLink>
-          </li>
-        </ul>
+        <div className="nav-links">
+          <NavLink
+            to={"/"}
+            className={({ isActive }) =>
+              isActive ? "btn btn-primary" : "btn btn-white"
+            }
+          >
+            <a href="/#">home</a>
+          </NavLink>
+
+          <NavLink
+            to={"/about"}
+            className={({ isActive }) =>
+              isActive ? "btn btn-primary" : "btn btn-white"
+            }
+          >
+            {" "}
+            <a href="/#">about</a>
+          </NavLink>
+        </div>
       </nav>
     </header>
   );
