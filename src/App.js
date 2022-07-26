@@ -23,18 +23,5 @@ function App() {
   );
 }
 
-//steps:
-//navbar
-//easy pages: about and error
-//cocktail
-//cocktail list
-//loader
-//single cocktail page
-//filter function
-//active
-//note: in an api, if the item cannot be found, it returns null - NOTE: you cannot read length of null
-//controlled and uncontrolled components:
-//uncontrolled - useRef
-//
 
 export default App;
