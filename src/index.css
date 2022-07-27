@@ -96,7 +96,7 @@ Buttons
 }
 .btn-white {
   background: transparent;
-  color: var(--mainWhite);
+  color: var(--mainBlack);
   border-color: var(--mainWhite);
 }
 .btn-white:hover {

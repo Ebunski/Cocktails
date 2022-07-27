@@ -18,7 +18,7 @@ const Navbar = () => {
                 isActive ? "btn btn-primary" : "btn btn-white"
               }
             >
-              <a href="/#">home</a>
+              home
             </NavLink>
           </li>
 
@@ -30,7 +30,7 @@ const Navbar = () => {
                 isActive ? "btn btn-primary" : "btn btn-white"
               }
             >
-              <a href="/#">about</a>
+              about
             </NavLink>
           </li>
         </ul>

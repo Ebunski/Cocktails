@@ -68,6 +68,7 @@ Steps:
 4. Forms always refresh the page on submit either by click on submit button or ENTER on the keyboard.
 5. The "\_redirects" file for react router.
 6. useCallback hook and ES-lint dependency warnings.
+7. Navlink can be used in place of <a> tags.
 
 ### Code I am proud of!!!
 
